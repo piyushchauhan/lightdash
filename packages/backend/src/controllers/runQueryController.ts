@@ -145,8 +145,8 @@ export class RunViewChartQueryController extends Controller {
     @OperationId('RunCustomExploreQuery')
     async runCustomExploreQuery(
         @Body()
-        body: // TODO: improve types
-        {
+        body: {
+            // TODO: improve types
             metricQuery: any;
             explore: any;
             csvLimit?: number | undefined;

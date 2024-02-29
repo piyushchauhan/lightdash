@@ -11,6 +11,7 @@ import { memo, useCallback, useMemo, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useExplores } from '../../../hooks/useExplores';
 import { ProjectCatalogTreeNode } from '../../../hooks/useProjectCatalogTree';
+import { useCustomExplore } from '../../../providers/CustomExploreProvider';
 import {
     ExploreMode,
     useExplorerContext,
@@ -175,18 +176,16 @@ const BasePanel = () => {
 const ExploreSideBar = memo(() => {
     const { projectUuid } = useParams<{ projectUuid: string }>();
 
+    const { setSql } = useCustomExplore();
+
     const tableName = useExplorerContext(
         (c) => c.state.unsavedChartVersion.tableName,
     );
     const mode = useExplorerContext((c) => c.state.mode);
 
-    const customSql = useExplorerContext((c) => c.state.customSql?.sql);
+    const customExplore = useExplorerContext((c) => c.state.customExplore);
 
     const metricQuery = useExplorerContext((c) => c.state.metricQuery);
-
-    const updateCustomSql = useExplorerContext(
-        (c) => c.actions.updateCustomSql,
-    );
 
     const clearExplore = useExplorerContext((c) => c.actions.clearExplore);
     const history = useHistory();
@@ -199,12 +198,10 @@ const ExploreSideBar = memo(() => {
     const handleTableSelect = useCallback(
         (node: ProjectCatalogTreeNode) => {
             if (!node.sqlTable) return;
-            updateCustomSql(generateBasicSqlQuery(node.sqlTable));
+            setSql(generateBasicSqlQuery(node.sqlTable));
         },
-        [updateCustomSql],
+        [setSql],
     );
-
-    console.log(customSql, metricQuery);
 
     return (
         <ItemDetailProvider>
@@ -212,9 +209,9 @@ const ExploreSideBar = memo(() => {
                 <Stack h="100%" sx={{ flexGrow: 1 }}>
                     {/* TODO: I don't like this approach, need to refactor */}
                     {mode === ExploreMode.CREATE &&
-                    !(customSql && metricQuery) ? (
+                    !(customExplore && metricQuery) ? (
                         <ExploreProjectCatalog onSelect={handleTableSelect} />
-                    ) : tableName || (customSql && metricQuery) ? (
+                    ) : tableName || (customExplore && metricQuery) ? (
                         <ExplorePanel onBack={handleBack} />
                     ) : (
                         <BasePanel />

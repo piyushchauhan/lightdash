@@ -139,8 +139,9 @@ export class ExploreController extends Controller {
         @Request() req: express.Request,
         @Body()
         body: {
-            metricQuery: MetricQuery;
-            explore: Explore;
+            // TODO: use better types
+            metricQuery: any; // MetricQuery;
+            explore: any; // Explore;
         },
     ): Promise<{ status: 'ok'; results: ApiCompiledQueryResults }> {
         this.setStatus(200);
