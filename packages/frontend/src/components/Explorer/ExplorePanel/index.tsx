@@ -93,7 +93,7 @@ const ExplorePanel: FC<ExplorePanelProps> = memo(({ onBack }) => {
             <PageBreadcrumbs
                 size="md"
                 items={[
-                    ...(onBack && !customExplore
+                    ...(onBack
                         ? [
                               {
                                   title: 'Tables',
