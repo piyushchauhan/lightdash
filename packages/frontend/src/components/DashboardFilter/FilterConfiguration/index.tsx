@@ -171,6 +171,7 @@ const FilterConfiguration: FC<Props> = ({
                         draftState.tileTargets[tileUuid] = {
                             fieldId: fieldId(filterableField),
                             tableName: filterableField.table,
+                            fieldName: filterableField.name,
                         };
 
                         return draftState;

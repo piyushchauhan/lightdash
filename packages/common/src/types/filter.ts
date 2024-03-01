@@ -54,6 +54,7 @@ export interface MetricFilterRule
 export type DashboardFieldTarget = {
     fieldId: string;
     tableName: string;
+    fieldName: string;
 };
 
 type DashboardTileTarget = DashboardFieldTarget | false;

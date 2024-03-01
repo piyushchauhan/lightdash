@@ -24,7 +24,8 @@ export const FilterDashboardTo: FC<Props> = ({ filters, onAddFilter }) => (
                 icon={<MantineIcon icon={IconFilter} />}
                 onClick={() => onAddFilter(filter, true)}
             >
-                {friendlyName(filter.target.fieldId)} is{' '}
+                {friendlyName(filter.target.tableName)} -{' '}
+                {friendlyName(filter.target.fieldName)} is{' '}
                 {filter.operator === FilterOperator.NULL && (
                     <Text span fw={500}>
                         null

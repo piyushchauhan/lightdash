@@ -281,6 +281,7 @@ const getDefaultTileTargets = (
             [tileUuid]: {
                 fieldId: fieldId(filterableField),
                 tableName: filterableField.table,
+                fieldName: filterableField.name,
             },
         };
     }, {});
@@ -324,6 +325,7 @@ export const createDashboardFilterRuleFromField = ({
             target: {
                 fieldId: fieldId(field),
                 tableName: field.table,
+                fieldName: field.name,
             },
             tileTargets: getDefaultTileTargets(field, availableTileFilters),
             disabled: !isTemporary,

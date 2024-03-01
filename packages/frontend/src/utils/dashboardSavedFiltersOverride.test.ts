@@ -9,6 +9,7 @@ describe('dashboardSavedFiltersOverride', () => {
             target: {
                 fieldId: 'orders_is_completed',
                 tableName: 'orders',
+                fieldName: 'is_completed',
             },
             values: [true],
             label: 'Is Completed',
@@ -65,6 +66,7 @@ describe('dashboardSavedFiltersOverride', () => {
             target: {
                 fieldId: 'orders_amount',
                 tableName: 'orders',
+                fieldName: 'amount',
             },
             values: ['20'],
             label: 'label1',
@@ -125,6 +127,7 @@ describe('dashboardSavedFiltersOverride', () => {
             target: {
                 fieldId: 'payments_payment_method',
                 tableName: 'payments',
+                fieldName: 'payment_method',
             },
             label: 'label1',
             disabled: false,
@@ -202,6 +205,7 @@ describe('dashboardSavedFiltersOverride', () => {
             target: {
                 fieldId: 'orders_order_date_day',
                 tableName: 'orders',
+                fieldName: 'order_date_day',
             },
             label: 'Order Date Day',
             disabled: false,
@@ -278,6 +282,7 @@ describe('dashboardSavedFiltersOverride', () => {
             target: {
                 fieldId: 'orders_order_date_day',
                 tableName: 'orders',
+                fieldName: 'order_date_day',
             },
             label: 'Order Date Day',
             disabled: false,
@@ -320,6 +325,7 @@ describe('dashboardSavedFiltersOverride', () => {
             target: {
                 fieldId: 'customers_created_week',
                 tableName: 'customers',
+                fieldName: 'created_week',
             },
             values: ['2023-09-28T00:00:00.000Z'],
             disabled: false,

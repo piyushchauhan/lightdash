@@ -196,6 +196,7 @@ export async function seed(knex: Knex): Promise<void> {
                         target: {
                             fieldId: 'orders_is_completed',
                             tableName: 'orders',
+                            fieldName: 'is_completed',
                         },
                         values: [true],
                         operator: FilterOperator.EQUALS,
@@ -206,6 +207,7 @@ export async function seed(knex: Knex): Promise<void> {
                         target: {
                             fieldId: 'orders_order_date_year',
                             tableName: 'orders',
+                            fieldName: 'order_date_year',
                         },
                         values: [10],
                         operator: FilterOperator.IN_THE_PAST,
