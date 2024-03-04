@@ -39,6 +39,7 @@ describe('compress and uncompress dashboard filters', () => {
                         target: {
                             fieldId: 'payments_payment_method',
                             tableName: 'payments',
+                            fieldName: 'payment_method',
                         },
                         tileTargets: [],
                         disabled: false,
@@ -86,6 +87,7 @@ describe('compress and uncompress dashboard filters', () => {
                     'chart-id-modified-filter': {
                         fieldId: 'a_different_field',
                         tableName: 'a_different_table',
+                        fieldName: 'a_different_field',
                     },
                 },
             ]);
@@ -159,6 +161,7 @@ describe('compress and uncompress dashboard filters', () => {
                     'chart-id-modified-filter': {
                         fieldId: 'a_different_field',
                         tableName: 'a_different_table',
+                        fieldName: 'a_different_field',
                     },
                 },
                 { 'chart-id-no-filter2': false },
@@ -169,6 +172,7 @@ describe('compress and uncompress dashboard filters', () => {
                     'metric-chart-id-modified-filter': {
                         fieldId: 'a_different_field',
                         tableName: 'a_different_table',
+                        fieldName: 'a_different_field',
                     },
                 },
                 { 'metric-chart-id-no-filter2': false },
@@ -205,6 +209,7 @@ describe('compress and uncompress dashboard filters', () => {
                         target: {
                             fieldId: 'payments_payment_method',
                             tableName: 'payments',
+                            fieldName: 'payment_method',
                         },
                         tileTargets: {},
                         disabled: false,
@@ -239,6 +244,7 @@ describe('compress and uncompress dashboard filters', () => {
                 'chart-id-modified-filter': {
                     fieldId: 'other-field',
                     tableName: 'other-table',
+                    fieldName: 'other-field',
                 },
             });
         });
@@ -298,6 +304,7 @@ describe('compress and uncompress dashboard filters', () => {
                 'chart-id-modified-filter': {
                     fieldId: 'other-field',
                     tableName: 'other-table',
+                    fieldName: 'other-field',
                 },
             });
         });
